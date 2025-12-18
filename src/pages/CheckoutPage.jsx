@@ -51,16 +51,13 @@ const CheckoutPage = () => {
 
       console.log('Pedido criado com sucesso:', response);
 
-      // Limpar carrinho
       clearCart();
 
-      // Exibir mensagem de sucesso
       toast.success('Pedido criado com sucesso!', {
         position: 'bottom-right',
         autoClose: 3000,
       });
 
-      // Redirecionar para página de pedidos
       setTimeout(() => {
         navigate('/orders');
       }, 1500);

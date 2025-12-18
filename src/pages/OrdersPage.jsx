@@ -26,9 +26,7 @@ const OrdersPage = () => {
 
     try {
       const data = await getOrders();
-      // Extrair array de pedidos da resposta
       const ordersList = data.orders || [];
-      // Ordenar pedidos por data (mais recentes primeiro)
       const sortedOrders = ordersList.sort((a, b) => {
         const dateA = new Date(a.created_at || 0);
         const dateB = new Date(b.created_at || 0);
@@ -53,11 +51,10 @@ const OrdersPage = () => {
   const handleDeleteOrder = async (orderId) => {
     try {
       await deleteOrder(orderId);
-      // Atualizar lista removendo o pedido deletado
       setOrders((prevOrders) => prevOrders.filter((order) => order.id !== orderId));
     } catch (err) {
       console.error('Erro ao deletar pedido:', err);
-      throw err; // Re-lançar erro para ser tratado no componente OrderCard
+      throw err;
     }
   };
 

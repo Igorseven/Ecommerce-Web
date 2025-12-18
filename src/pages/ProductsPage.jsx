@@ -26,7 +26,6 @@ const ProductsPage = () => {
       setLoading(true);
       setError(null);
       try {
-        // Buscar produtos e categorias em paralelo
         const [productsData, categoriesData] = await Promise.all([
           getAllProducts(),
           getCategories(),
@@ -63,7 +62,7 @@ const ProductsPage = () => {
     }
 
     setFilteredProducts(filtered);
-    setPage(1); // Resetar para primeira página ao filtrar
+    setPage(1);
   }, [selectedCategory, searchTerm, products]);
 
   // Calcular produtos da página atual
