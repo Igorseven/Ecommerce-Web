@@ -26,7 +26,7 @@ services:
   # Backend Flask
   backend:
     build:
-      context: ../ecommerce-backend
+      context: ../Ecommerce-API
       dockerfile: Dockerfile
     container_name: ecommerce-api
     restart: always
